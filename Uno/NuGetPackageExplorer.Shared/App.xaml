@@ -2,7 +2,7 @@
     x:Class="PackageExplorer.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:NuGetPackageExplorer">
+    xmlns:conv="using:PackageExplorer">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -29,27 +29,11 @@
             </ResourceDictionary.MergedDictionaries>
 
             <!--#region Resources imported from NPE -->
-            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
-            <local:NullToVisibilityConverter x:Key="InvertedNullToVisibilityConverter" Inverted="True" />
-            <local:NullToBoolConverter x:Key="nullToBoolConverter" />
-            <local:BooleanToVisibilityConverter x:Key="invertedBoolToVis" Inverted="True" />
-            <local:EnumConverter x:Key="EnumConverter" />
-            <!--
-            <local:IntegerToBooleanConverter x:Key="FontSizeToBoolConverter" />
-            <local:BooleanToVisibilityConverter x:Key="boolToVis" />
-            <local:CountToVisibilityConverter x:Key="countConverter" />
-            <local:AndLogicConverter x:Key="andConverter" />
-            <local:SubtracterConverter x:Key="SubtracterConverter" />
-            <local:StringShortenerConverter x:Key="StringShortenerConverter" />
-            <local:FileSizeConverter x:Key="FileSizeConverter" />
-            <local:DateTimeOffsetHumanizeConverter x:Key="DateTimeOffsetHumanizeConverter" />
-            <local:DateTimeOffsetLongDateConverter x:Key="DateTimeOffsetLongDateConverter" />
-            <local:CertificateToSubjectConverter x:Key="CertificateToSubjectConverter" />
-            <local:IconUrlToImageCacheConverter x:Key="IconUrlToImageCacheConverter" />
-            <local:NumberToStringConverter x:Key="NumberToStringConverter" />
-            <local:StringCollectionsToStringConverter x:Key="StringCollectionsToStringConverter" />
-            -->
-
+            <conv:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+            <conv:NullToVisibilityConverter x:Key="InvertedNullToVisibilityConverter" Inverted="True" />
+            <conv:NullToBoolConverter x:Key="nullToBoolConverter" />
+            <conv:BooleanToVisibilityConverter x:Key="invertedBoolToVis" Inverted="True" />
+            <conv:EnumConverter x:Key="EnumConverter" />
         
             <Style x:Key="DetailMetadataStyle" TargetType="StackPanel">
                 <Setter Property="Margin" Value="0,3,0,0" />

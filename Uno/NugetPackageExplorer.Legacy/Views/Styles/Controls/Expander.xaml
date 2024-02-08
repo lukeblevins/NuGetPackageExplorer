@@ -2,12 +2,12 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 					xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
-					xmlns:macos="http:/uno.ui/macos"
+					xmlns:macos="http://uno.ui/macos"
 					xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-					xmlns:xamarin="http:/uno.ui/xamarin"
+					xmlns:not_win="http://uno.ui/not_win"
 					xmlns:not_macos="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					xmlns:todo="what should be done"
-					mc:Ignorable="macos xamarin todo">
+					mc:Ignorable="macos not_win todo">
 
 	<Style x:Key="InnerSectionHeaderToggleButtonStyle"
 		   TargetType="ToggleButton">
@@ -311,9 +311,9 @@
 										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 										  HorizontalContentAlignment="Stretch"
 										  VerticalContentAlignment="Stretch"
-										  xamarin:Content="{TemplateBinding Content}"
-										  xamarin:ContentTemplate="{TemplateBinding ContentTemplate}"
-										  xamarin:ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+										  not_win:Content="{TemplateBinding Content}"
+										  not_win:ContentTemplate="{TemplateBinding ContentTemplate}"
+										  not_win:ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
 										  Margin="{TemplateBinding Padding}"
 										  Visibility="Collapsed" />
 
@@ -615,9 +615,9 @@
 						<ContentPresenter Grid.Row="1"
 										  x:Name="ContentPresenter"
 										  x:Load="False"
-										  xamarin:Content="{TemplateBinding Content}"
-										  xamarin:ContentTemplate="{TemplateBinding ContentTemplate}"
-										  xamarin:ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+										  not_win:Content="{TemplateBinding Content}"
+										  not_win:ContentTemplate="{TemplateBinding ContentTemplate}"
+										  not_win:ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
 										  Margin="{TemplateBinding Padding}"
 										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
 										  HorizontalContentAlignment="Stretch"
