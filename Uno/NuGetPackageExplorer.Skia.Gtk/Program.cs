@@ -1,25 +1,21 @@
-﻿using GLib;
-using System;
-using System.Linq;
-using System.IO;
+﻿using System;
+using GLib;
+using Uno.UI.Runtime.Skia.Gtk;
 
-using Uno.UI.Runtime.Skia;
+namespace PackageExplorer.Skia.Gtk;
 
-namespace PackageExplorer
+public class Program
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			ExceptionManager.UnhandledException += delegate (UnhandledExceptionArgs expArgs)
-			{
-				Console.WriteLine("GLIB UNHANDLED EXCEPTION" + expArgs.ExceptionObject.ToString());
-				expArgs.ExitApplication = true;
-			};
+    public static void Main(string[] args)
+    {
+        ExceptionManager.UnhandledException += delegate (UnhandledExceptionArgs expArgs)
+        {
+            Console.WriteLine("GLIB UNHANDLED EXCEPTION" + expArgs.ExceptionObject.ToString());
+            expArgs.ExitApplication = true;
+        };
 
-			var host = new GtkHost(() => new App());
+        var host = new GtkHost(() => new AppHead());
 
-			host.Run();
-		}
+        host.Run();
     }
 }

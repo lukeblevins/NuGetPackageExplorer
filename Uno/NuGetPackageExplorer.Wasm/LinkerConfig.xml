@@ -1,19 +1,11 @@
-﻿<linker>
-  <assembly fullname="PackageExplorer" />
-  <assembly fullname="NuGetPackageExplorer.Core" />
-  <assembly fullname="NuGetPackageExplorer.Types" />
-  <assembly fullname="NuGetPackageExplorer.PackageViewModel" />
+<linker>
+  <assembly fullname="NuGetPackageExplorer" />
+  <assembly fullname="NuGetPackageExplorer.Wasm" />
 
-  <assembly fullname="Uno.UI" />
-
-  <!-- Required for proper functioning of MEF -->
-  <assembly fullname="System.ComponentModel.Composition" />
-
-  <!-- required for Monaco Editor -->
-  <assembly fullname="MonacoEditorComponent" />
-
+  <!--
+  Uncomment this section when using JSON.NET
   <assembly fullname="System.Core">
-    <!-- This is required by JSon.NET and any expression.Compile caller -->
     <type fullname="System.Linq.Expressions*" />
   </assembly>
+   -->
 </linker>

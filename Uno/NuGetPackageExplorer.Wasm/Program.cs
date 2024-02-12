@@ -1,22 +1,13 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿namespace PackageExplorer.Wasm;
 
-using Uno.UI;
-
-using Microsoft.UI.Xaml;
-
-namespace PackageExplorer
+public class Program
 {
-	public class Program
-	{
-		static int Main(string[] args)
-		{
-            FeatureConfiguration.ApiInformation.NotImplementedLogLevel = Uno.Foundation.Logging.LogLevel.Debug;
+    private static App? _app;
 
-            Microsoft.UI.Xaml.Application.Start(_ => new App());
+    public static int Main(string[] args)
+    {
+        Microsoft.UI.Xaml.Application.Start(_ => _app = new AppHead());
 
-			return 0;
-		}
-	}
+        return 0;
+    }
 }

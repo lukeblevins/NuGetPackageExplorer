@@ -1,0 +1,10 @@
+{
+	"profiles": {
+		"NuGetPackageExplorer.Windows (Unpackaged)": {
+			"commandName": "Project"
+		},
+		"NuGetPackageExplorer.Windows (Package)": {
+			"commandName": "MsixPackage"
+		}
+	}
+}
