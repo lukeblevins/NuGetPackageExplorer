@@ -1,4 +1,5 @@
-﻿namespace PackageExplorer;
+﻿
+namespace PackageExplorer;
 
 public class App : Application
 {
@@ -15,7 +16,6 @@ public class App : Application
 #if DEBUG
         MainWindow.EnableHotReload();
 #endif
-
 
         // Do not repeat app initialization when the Window already has content,
         // just ensure that the window is active

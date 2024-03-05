@@ -7,8 +7,8 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="NuGetPackageExplorer"
-    Publisher="CN=Uno Platform"
+    Name="b3c31528-5f52-47af-aba5-eb153d89f949"
+    Publisher="CN=jerome.laban"
     Version="1.0.0.0" />
 
   <Properties>
@@ -17,8 +17,8 @@
   </Properties>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22621.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22621.0" />
   </Dependencies>
 
   <Resources>
@@ -31,7 +31,8 @@
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
         DisplayName="NuGetPackageExplorer"
-        Description="NuGetPackageExplorer">
+        Description="NuGetPackageExplorer"
+        BackgroundColor="transparent">
         <uap:SplashScreen />
       </uap:VisualElements>
     </Application>
@@ -39,5 +40,6 @@
 
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
+    <Capability Name="internetClient" />
   </Capabilities>
 </Package>

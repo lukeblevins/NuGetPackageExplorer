@@ -6,6 +6,8 @@
     <NoWarn>$(NoWarn);NU1504;NU1505;NU1701</NoWarn>
     <!-- Disabled due to issue with Central Package Management with implicit using -->
     <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>PackageExplorer</AssemblyName>
+    <RootNamespace>PackageExplorer</RootNamespace>
     <WasmPWAManifestFile>manifest.webmanifest</WasmPWAManifestFile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <!--
@@ -22,6 +24,9 @@
     -->
     <WasmShellEnableThreads>true</WasmShellEnableThreads>
     <WasmShellPThreadsPoolSize>8</WasmShellPThreadsPoolSize>
+    <MsdlApiBaseLocation>api/MsdlProxy</MsdlApiBaseLocation>
+    <MsdlApiBaseLocation Condition="'$(Configuration)'=='Debug'">http://localhost:7071/api/MsdlProxy</MsdlApiBaseLocation>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
@@ -34,6 +39,24 @@
     -->
     <WasmShellILLinkerEnabled>false</WasmShellILLinkerEnabled>
   </PropertyGroup>
+  <ItemGroup>
+    <WasmShellMonoEnvironment Include="MSDL_PROXY_LOCATION" Value="$(MsdlApiBaseLocation)" />
+
+    <!-- This value must be the instrumentation key, not the connection string -->
+    <WasmShellMonoEnvironment Include="NPE_AI_INSTRUMENTATIONKEY" Value="$(NpeAiInstrumentationKey)" />
+  </ItemGroup>
+  <ItemGroup>
+    <WasmShellMonoEnvironment Include="MONO_GC_PARAMS" Value="soft-heap-limit=512m,nursery-size=64m,evacuation-threshold=66,major=marksweep" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <MonoRuntimeDebuggerEnabled>true</MonoRuntimeDebuggerEnabled>
+    <DefineConstants>$(DefineConstants);TRACE;DEBUG</DefineConstants>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants>$(DefineConstants);USE_MONACO_EDITOR</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <!-- XAML Resource trimming https://aka.platform.uno/xaml-trimming -->
     <!--<UnoXamlResourcesTrimming>true</UnoXamlResourcesTrimming>-->
@@ -44,10 +67,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="manifest.webmanifest" />
+    <Content Include="ai.2.6.3.min.js" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
-    <EmbeddedResource Include="WasmScripts\AppManifest.js" />
+    <EmbeddedResource Include="WasmScripts\*.js" />
   </ItemGroup>
   <ItemGroup>
     <LinkerDescriptor Include="LinkerConfig.xml" />
@@ -57,10 +81,13 @@
     <PackageReference Include="Uno.Wasm.Bootstrap" />
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" />
     <PackageReference Include="Uno.WinUI.WebAssembly" />
+    <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls" />
+    <PackageReference Include="Uno.Monaco.Editor" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="System.Reactive" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
     <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Uno.Extensions.Logging.WinUI" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NuGetPackageExplorer\NuGetPackageExplorer.csproj" />

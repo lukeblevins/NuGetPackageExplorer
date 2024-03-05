@@ -4,18 +4,28 @@
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
     <TargetFramework>$(DotNetVersion)</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>PackageExplorer</AssemblyName>
+    <RootNamespace>PackageExplorer</RootNamespace>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
+  
+  <ItemGroup Condition="exists('..\NuGetPackageExplorer.Windows')">
+    <EmbeddedResource Include="..\NuGetPackageExplorer.Windows\Package.appxmanifest" LogicalName="Package.appxmanifest" />
+  </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Package.appxmanifest" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Uno.WinUI.Skia.Gtk" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Uno.Extensions.Logging.WinUI" />
+    <PackageReference Include="System.Reactive" />
+    <PackageReference Include="System.Runtime.Caching" />
+    <PackageReference Include="System.Security.Cryptography.Xml" />
     <PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
     <PackageReference Include="SkiaSharp.Skottie" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
   </ItemGroup>
   <ItemGroup>

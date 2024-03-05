@@ -1,3 +1,4 @@
 var UnoAppManifest = {
-    displayName: "NuGetPackageExplorer"
+    displayName: "NuGet Package Explorer (WASM)",
+    accentColor: "#777777"
 }

@@ -7,7 +7,7 @@
       "Uno\\NuGetPackageExplorer.Shared\\NuGetPackageExplorer.Shared.csproj",
       "Uno\\NuGetPackageExplorer.Skia.Gtk\\NuGetPackageExplorer.Skia.Gtk.csproj",
       "Uno\\NuGetPackageExplorer.Wasm\\NuGetPackageExplorer.Wasm.csproj",
-      "Uno\\NuGetPackageExplorer.Windows\\NuGetPackageExplorer.Windows.csproj"
+      "Uno\\NuGetPackageExplorer.Windows\\NuGetPackageExplorer.Windows.csproj",
       "PackageViewModel\\PackageViewModel.csproj",
       "Types\\Types.csproj"
     ]

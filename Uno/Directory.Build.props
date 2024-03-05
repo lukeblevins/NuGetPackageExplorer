@@ -1,9 +1,8 @@
 <Project>
   <PropertyGroup>
-    <DotNetVersion>net8.0</DotNetVersion>
+    <DotNetVersion>net7.0</DotNetVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
     <!--
