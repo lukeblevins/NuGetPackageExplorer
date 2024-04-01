@@ -45,6 +45,7 @@
   <PropertyGroup>
     <DefineConstants>$(DefineConstants);USE_MONACO_EDITOR</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'NuGetPackageExplorer.Wasm' " />
   <ItemGroup>
     <UpToDateCheckInput Include="..\NuGetPackageExplorer.Shared\**\*.xaml" />
     <UpToDateCheckInput Include="..\NugetPackageExplorer.Legacy\**\*.xaml" />
@@ -52,6 +53,7 @@
   <ItemGroup>
     <Content Include="images\**\*.png" />
     <Content Include="ai.2.6.3.min.js" />
+    <Content Update="WasmCSS\uno-fluentui-assets.woff2" />
     <EmbeddedResource Include="WasmCSS\Fonts.css" />
     <EmbeddedResource Include="WasmCSS\Style.css" />
     <EmbeddedResource Include="WasmScripts\*.js" />
@@ -70,6 +72,7 @@
     <PackageReference Include="System.Reactive" Version="5.0.0" />
     <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls" Version="7.1.200-dev.16.g49756d9ac4" />
     <PackageReference Include="Uno.CommunityToolkit.WinUI.UI.Controls.DataGrid" Version="7.1.200-dev.16.g49756d9ac4" />
+    <PackageReference Include="Uno.Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.4.2" />
     <PackageReference Include="Uno.Monaco.Editor" Version="2.0.0-dev.50" />
     <PackageReference Include="Uno.WinUI.WebAssembly" Version="5.1.104" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.1.104" />

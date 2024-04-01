@@ -16,8 +16,11 @@ namespace PackageExplorer
 
         public object Convert(object value, Type targetType, object parameter, _CultureInfo culture)
         {
-            var boolValue = (bool)value;
-            return boolValue ? "Yes" : "No";
+            if (value is bool boolValue)
+            {
+                return boolValue ? "Yes" : "No";
+            }
+            return string.Empty;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, _CultureInfo culture)

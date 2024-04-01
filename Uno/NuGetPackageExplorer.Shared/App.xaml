@@ -23,7 +23,6 @@
                 <ResourceDictionary Source="Views/Styles/Controls/GridSplitter.xaml" />
                 <ResourceDictionary Source="Views/Styles/Controls/HeaderedControls.xaml" />
                 <ResourceDictionary Source="Views/Styles/Controls/ListView.xaml" />
-                <ResourceDictionary Source="Views/Styles/Controls/Menus.xaml" />
                 <ResourceDictionary Source="Views/Styles/Controls/TreeViewItem.xaml" />
                 <ResourceDictionary Source="Views/Styles/Controls/TabViewItem.xaml" />
                 <!--#endregion-->
@@ -35,22 +34,6 @@
             <local:NullToBoolConverter x:Key="nullToBoolConverter" />
             <local:BooleanToVisibilityConverter x:Key="invertedBoolToVis" Inverted="True" />
             <local:EnumConverter x:Key="EnumConverter" />
-            <!--
-            <local:IntegerToBooleanConverter x:Key="FontSizeToBoolConverter" />
-            <local:BooleanToVisibilityConverter x:Key="boolToVis" />
-            <local:CountToVisibilityConverter x:Key="countConverter" />
-            <local:AndLogicConverter x:Key="andConverter" />
-            <local:SubtracterConverter x:Key="SubtracterConverter" />
-            <local:StringShortenerConverter x:Key="StringShortenerConverter" />
-            <local:FileSizeConverter x:Key="FileSizeConverter" />
-            <local:DateTimeOffsetHumanizeConverter x:Key="DateTimeOffsetHumanizeConverter" />
-            <local:DateTimeOffsetLongDateConverter x:Key="DateTimeOffsetLongDateConverter" />
-            <local:CertificateToSubjectConverter x:Key="CertificateToSubjectConverter" />
-            <local:IconUrlToImageCacheConverter x:Key="IconUrlToImageCacheConverter" />
-            <local:NumberToStringConverter x:Key="NumberToStringConverter" />
-            <local:StringCollectionsToStringConverter x:Key="StringCollectionsToStringConverter" />
-            -->
-
         
             <Style x:Key="DetailMetadataStyle" TargetType="StackPanel">
                 <Setter Property="Margin" Value="0,3,0,0" />
@@ -99,10 +82,12 @@
 
             <Style x:Key="PoweredByHyperlinkButtonStyle"
                    TargetType="HyperlinkButton">
-                <Setter Property="Content">
+                <Setter Property="ContentTemplate">
                     <Setter.Value>
-                        <Image Source="{ThemeResource PoweredByUnoPlatformImageSource}"
+                        <DataTemplate>
+                            <Image Source="{ThemeResource PoweredByUnoPlatformImageSource}"
                                Height="40" />
+                        </DataTemplate>
                     </Setter.Value>
                 </Setter>
                 <Setter Property="NavigateUri" Value="https://platform.uno/" />
